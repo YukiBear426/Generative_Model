@@ -1,44 +1,45 @@
+## Project Description
+This project implements the generation of cartoon avatar images based on deep generative models, supporting multiple mainstream generative frameworks, including GAN, VAE, Flow, and Diffusion.
 
-# Face_Generation 项目说明
 
-# 本项目基于深度生成模型实现卡通头像图像的生成，支持多种主流生成框架，包括：gan、vae、flow、diffusion
-
-# 项目结构
+## Project Structure
 ```bash
-Face_generation/ 
-├── data/                     # 原始卡通头像数据集  
-├── models/                   # 模型定义  
-│   ├── gan_model.py          # GAN 模型
-│   ├── flow_model.py         # flow 模型
-│   ├── vae_model.py          # VAE 模型 
-│   └── diffusion_model.py    # diffusion 模型
-├── trainer/                  # 模型定义   
-├   ├── train_gan.py          # GAN 模型训练脚本  
-├   ├── train_gan.py          # flow 模型训练脚本 
-├   ├── train_vae.py          # VAE 模型训练脚本  
-├   ├── train_diffusion.py    # diffusion 模型训练脚本  
-├── config.py                 # 超参数
-├── utils.py                  # 辅助函数 
-├── train.py                  # 训练总接口
-├── visualization.py          # 生成gif可视化文件
-├── output/                   # 输出图像目录  
-├── logs/                     # 输出损失曲线 
-└── README.md                 # 项目说明文档  
+Generative_Model/
+├── data/                     # Raw cartoon avatar dataset
+├── models/                   # Model definitions
+│   ├── gan_model.py          # GAN model
+│   ├── flow_model.py         # Flow model
+│   ├── vae_model.py          # VAE model
+│   └── diffusion_model.py    # Diffusion model
+├── trainer/                  # Training scripts
+│   ├── train_gan.py          # GAN training script
+│   ├── train_flow.py         # Flow training script
+│   ├── train_vae.py          # VAE training script
+│   └── train_diffusion.py    # Diffusion training script
+├── config.py                 # Hyperparameters
+├── utils.py                  # Utility functions
+├── train.py                  # Unified training interface
+├── visualization.py          # Visualization (e.g., GIF generation)
+├── output/                   # Output images
+├── logs/                     # Training loss logs
+└── README.md                 # Project description
+  
 ```
 
-# 数据集说明：请下载好数据集后放入.data/中
+## Dataset Description
+Please download the dataset and place it into the `data/` folder before training or testing.
 
-# 安装依赖项：
+## Install Dependencies
 
 ```bash
-cd Face_generation
+cd Generative_Model
 conda activate # [your env]
 pip install torch torchvision matplotlib tqdm pillow 
 ```
 
-# 训练
+## Training and Testing
 ```bash
-python train.py --model diffusion  # 可选：vae、flow、gan、diffusion
+python train.py --model diffusion  # you can choose：vae、flow、gan、diffusion
 ```
 
 
